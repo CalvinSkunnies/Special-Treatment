@@ -36,6 +36,7 @@ jobs:
       - name: 🚀 Run Python scripts
         run: |
           python MEXC.py
+          python OKX.py
       
           
       - name: 📤 Commit and Push Changes
