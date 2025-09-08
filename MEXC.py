@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 
 API_URL = "https://api.mexc.com/api/v3/exchangeInfo"
-CSV_FILE = "mexc_st_tokens.csv"
+CSV_FILE = "ST_MEXC.csv"
 RATE_LIMIT_DELAY = 0.2  # delay to respect MEXC rate limits
 
 def fetch_st_tokens():
