@@ -37,6 +37,7 @@ jobs:
         run: |
           python MEXC.py
           python OKX.py
+          python HTX.py
       
           
       - name: 📤 Commit and Push Changes
