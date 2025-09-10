@@ -29,17 +29,16 @@ def fetch_kucoin_st_tokens():
             st_tokens = []
             for symbol in symbols:
                 # Convert tags to uppercase and check for 'ST'
-                tags = symbol.get('tags', '')
-                if 'ST' in tags.upper(): # This checks for 'ST', 'st', 'St', 'sT', etc.
+                st_value = symbol.get('st', 'false')
+                if st_value == "true" : # This checks for 'ST', 'st', 'St', 'sT', etc.
                     st_tokens.append({
                         'pair': symbol.get('symbol'),
                         'base': symbol.get('baseCurrency'),
                         'quote': symbol.get('quoteCurrency'),
-                        'tags': tags,
+                        'st': st_value,
                         'status': symbol.get('enableTrading'),
                         'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     })
-            
             return st_tokens
         else:
             print(f"❌ API Error: {data.get('msg', 'Unknown error')}")
@@ -60,7 +59,7 @@ if st_tokens:
     df = pd.DataFrame(st_tokens)
     
     print(f"\n⚠️ Found {len(st_tokens)} ST-tagged trading pairs:")
-    print(df[['pair', 'base', 'quote', 'tags']])
+    print(df[['pair', 'base', 'quote', 'st']])
     
     # Save to CSV
     filename = f"ST_KuCoin.csv"
@@ -69,7 +68,7 @@ if st_tokens:
 else:
     print("\n✅ No trading pairs are currently ST-tagged")
     # Create empty CSV with headers
-    df = pd.DataFrame(columns=['pair', 'base', 'quote', 'tags', 'status', 'last_updated'])
+    df = pd.DataFrame(columns=['pair', 'base', 'quote', 'st', 'status', 'last_updated'])
     filename = f"ST_KuCoin.csv"
     df.to_csv(filename, index=False)
     print(f"📁 Empty file created: {filename}")
