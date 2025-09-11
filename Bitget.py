@@ -70,7 +70,6 @@ else:
     print("\n✅ No tokens found with grey status")
     # Create empty CSV with headers
     df = pd.DataFrame(columns=['pair', 'base', 'quote', 'status', 'min_trade_amount', 'max_trade_amount', 'last_updated'])
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    filename = f"bitget_grey_status_{timestamp}.csv"
+    filename = f"ST_Bitget.csv"
     df.to_csv(filename, index=False)
     print(f"📁 Empty file created: {filename}")
