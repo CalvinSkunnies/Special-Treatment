@@ -39,6 +39,7 @@ jobs:
           python OKX.py
           python HTX.py
           python KuCoin.py
+          python Bitget.py
       
           
       - name: 📤 Commit and Push Changes
