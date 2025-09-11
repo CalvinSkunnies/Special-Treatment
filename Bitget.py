@@ -69,7 +69,7 @@ if grey_tokens:
 else:
     print("\n✅ No tokens found with grey status")
     # Create empty CSV with headers
-    df = pd.DataFrame(columns=['pair', 'base', 'quote', 'status', 'min_trade_amount', 'max_trade_amount', 'last_updated'])
+    df = pd.DataFrame(columns=['pair', 'base', 'quote','last_updated'])
     filename = f"ST_Bitget.csv"
     df.to_csv(filename, index=False)
     print(f"📁 Empty file created: {filename}")
