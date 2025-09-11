@@ -29,7 +29,7 @@ def fetch_bitget_grey_status_tokens():
             grey_status_tokens = []
             for symbol in symbols:
                 status = symbol.get('status', '').lower()
-                if status == 'grey':
+                if status == 'gray':
                     grey_status_tokens.append({
                         'pair': symbol.get('symbol'),
                         'base': symbol.get('baseCoin'),
