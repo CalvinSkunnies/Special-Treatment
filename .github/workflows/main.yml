@@ -52,5 +52,5 @@ jobs:
 
           git add .
           git commit -m "🔄 Automated update - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-          git pull origin main --rebase || echo "Nothing to rebase"
+          git pull origin main --rebase --strategy-option ours
           git push origin main
