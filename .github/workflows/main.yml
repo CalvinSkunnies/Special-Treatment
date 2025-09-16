@@ -40,6 +40,7 @@ jobs:
           python HTX.py
           python KuCoin.py
           python Bitget.py
+          python Binance.py
       
           
       - name: 📤 Commit and Push Changes
