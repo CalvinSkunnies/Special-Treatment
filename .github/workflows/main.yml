@@ -2,7 +2,7 @@ name: Scheduled Python Script
 
 on:
   schedule:
-    - cron: '0 */24 * * *'  # Runs everydays
+    - cron: '0 08 * * *'  # Runs everydays
   push:
     branches:
       - main
