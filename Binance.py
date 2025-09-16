@@ -24,7 +24,7 @@ def fetch_binance_break_status_tokens():
         # Filter for symbols with 'BREAK' status
         break_tokens = []
         for symbol in data.get('symbols', []):
-            status = symbol.get('STATUS', '')
+            status = symbol.get('status', '')
             if status == "BREAK":
                 break_tokens.append({
                     'pair': symbol.get('symbol'),
