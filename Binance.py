@@ -12,7 +12,7 @@ def fetch_binance_break_status_tokens():
     url = "https://api.binance.com/api/v3/exchangeInfo"
     
     # Rate limiting: Binance allows 1200 requests per minute
-    time.sleep(0.1)
+    time.sleep(0.2)
     
     print("📡 Fetching exchange information from Binance API...")
     
@@ -24,7 +24,7 @@ def fetch_binance_break_status_tokens():
         # Filter for symbols with 'BREAK' status
         break_tokens = []
         for symbol in data.get('symbols', []):
-            status = symbol.get('status', '').upper()
+            status = symbol.get('STATUS', '')
             if status == "BREAK":
                 break_tokens.append({
                     'pair': symbol.get('symbol'),
